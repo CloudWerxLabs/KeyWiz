@@ -1,7 +1,7 @@
 import os
 import sys
 import psutil
-import markdown2
+import markdown
 import win32gui
 import win32process
 import win32api
@@ -660,7 +660,7 @@ class KeyWhizApp(QMainWindow, metaclass=QtWrapperMeta):
         try:
             with open(shortcut_file, 'r', encoding='utf-8') as f:
                 markdown_text = f.read()
-                html_text = markdown2.markdown(markdown_text)
+                html_text = markdown.markdown(markdown_text)
                 self.text_browser.setHtml(html_text)
         except Exception as e:
             self.text_browser.setHtml(f"Error loading shortcuts: {str(e)}")
