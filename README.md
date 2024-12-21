@@ -85,27 +85,48 @@ Perfect for:
 
 ### Quick Start
 
+1. Clone the repository:
 ```bash
-# Clone the repository
 git clone https://github.com/cloudwerxlab/keywiz.git
 cd keywiz
+```
 
-# Install dependencies
+2. Create and activate virtual environment:
+```bash
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment (Windows)
+.venv\Scripts\activate
+
+# Activate virtual environment (Windows PowerShell)
+.venv\Scripts\Activate.ps1
+```
+
+3. Install required dependencies:
+```bash
 pip install -r requirements.txt
+```
 
-# Launch KeyWiz
+4. Run the application:
+```bash
 python keywhiz_app.py
 ```
 
 ### Building from Source
 
 ```bash
-# Install PyInstaller
+# Ensure you're in the virtual environment
+.venv\Scripts\activate
+
+# Install PyInstaller if not installed
 pip install pyinstaller
 
 # Create executable
 pyinstaller KeyWhiz.spec
 ```
+
+The executable will be created in the `dist` directory.
 
 ## 📦 Dependencies
 
