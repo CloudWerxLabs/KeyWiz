@@ -1,6 +1,6 @@
-PyQt5==5.15.7
-psutil==5.9.4
-pywin32==305
-markdown2==2.4.7
-Pillow==9.5.0
+PyQt5==5.15.10
+psutil==5.9.7
+pywin32==306
+markdown2==2.4.10
+Pillow==10.1.0
 cairosvg==2.7.1
