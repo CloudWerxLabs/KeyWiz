@@ -1,4 +1,5 @@
 PyQt5==5.15.10
+PyQt5-sip==12.13.0
 psutil==5.9.7
 pywin32==306
 markdown2==2.4.10
