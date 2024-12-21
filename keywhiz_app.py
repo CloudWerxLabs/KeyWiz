@@ -13,17 +13,13 @@ import warnings
 from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QTextBrowser, 
                              QSystemTrayIcon, QMenu, QAction, QPushButton, QHBoxLayout,
                              QDesktopWidget, QMainWindow, QLabel, QFrame)
-from PyQt5.QtCore import Qt, QTimer, QRect, pyqtWrapperType
+from PyQt5.QtCore import Qt, QTimer, QRect
 from PyQt5.QtGui import QIcon, QScreen, QFont, QPalette, QColor, QLinearGradient, QPainter, QPainterPath
 
 # Suppress specific PyQt5 deprecation warnings
 warnings.filterwarnings('ignore', category=DeprecationWarning, module='PyQt5.sip')
 
-class QtWrapperMeta(pyqtWrapperType):
-    def __new__(cls, name, bases, attrs):
-        return super().__new__(cls, name, bases, attrs)
-
-class CustomTitleBar(QFrame, metaclass=QtWrapperMeta):
+class CustomTitleBar(QFrame):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setObjectName("customTitleBar")
@@ -165,7 +161,7 @@ class CustomTitleBar(QFrame, metaclass=QtWrapperMeta):
                 else:
                     self.window().showMaximized()
 
-class KeyWhizApp(QMainWindow, metaclass=QtWrapperMeta):
+class KeyWhizApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.current_process = None
