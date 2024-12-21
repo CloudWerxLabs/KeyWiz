@@ -1,24 +1,81 @@
-![KeyWiz Logo](logo.svg)
+<div align="center">
+
+![KeyWiz Logo](text_logo.svg)
 
 # KeyWiz
 
-## Overview
+#### Your Magical Keyboard Shortcut Assistant
 
-KeyWiz is a sleek, always-on-top Windows application that dynamically displays keyboard shortcuts for your currently active application. Perfect for developers, power users, and anyone looking to boost their productivity!
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Platform](https://img.shields.io/badge/platform-windows-lightgrey.svg)](https://www.microsoft.com/windows)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-## Features
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Contributing](#-contributing) • [Support](#-support)
 
-- **Dynamic Shortcut Detection**: Automatically updates shortcuts based on the active application
-- **Minimal UI**: Thin sidebar design that doesn't interrupt your workflow
-- **Windows Snap Support**: Seamlessly integrates with Windows window management
-- **Custom Positioning**: Toggle between left and right screen sides
-- **Modern, Frameless Design**: Blends perfectly with your desktop environment
+---
 
-## Screenshots
+</div>
 
-[Insert screenshots of the app in different states]
+<div align="center">
+  <img src="https://i.imgur.com/JDs5MuI.png" alt="KeyWiz Screenshot" width="800px"/>
+  <p><em>KeyWiz in action - showing Windsurf IDE shortcuts</em></p>
+</div>
 
-## Installation
+<img src="app_icons/app_256.png" align="right" width="128px"/>
+
+## 🎯 Overview
+
+KeyWiz is your magical companion for mastering keyboard shortcuts in Windows. This sleek, always-on-top application dynamically displays shortcuts for your active application, helping you become a keyboard wizard! 
+
+Perfect for:
+- 💻 Developers seeking to boost productivity
+- 🎨 Designers switching between creative tools
+- 🚀 Power users optimizing their workflow
+- 🎮 Anyone wanting to level up their keyboard skills
+
+## ✨ Features
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🔄 Dynamic Detection</h3>
+      <ul>
+        <li>Real-time shortcut updates</li>
+        <li>Application-aware display</li>
+        <li>Instant context switching</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>🎨 Modern Design</h3>
+      <ul>
+        <li>Sleek, frameless window</li>
+        <li>Minimal visual footprint</li>
+        <li>Customizable appearance</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <h3>📌 Smart Positioning</h3>
+      <ul>
+        <li>Windows Snap support</li>
+        <li>Left/right screen docking</li>
+        <li>Always-on-top display</li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>🛠 Extensible</h3>
+      <ul>
+        <li>Custom shortcut support</li>
+        <li>Easy markdown format</li>
+        <li>Growing shortcut database</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+## 🚀 Installation
 
 ### Prerequisites
 
@@ -26,82 +83,112 @@ KeyWiz is a sleek, always-on-top Windows application that dynamically displays k
 - Python 3.8+
 - pip package manager
 
-### Setup
+### Quick Start
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/keywiz.git
-   cd keywiz
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/cloudwerxlab/keywiz.git
+cd keywiz
 
-2. Install required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Install dependencies
+pip install -r requirements.txt
 
-3. Run the application:
-   ```bash
-   python keywiz_app.py
-   ```
-
-## Dependencies
-
-- PyQt5
-- psutil
-- win32gui
-- win32process
-- markdown2
-
-## Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Adding Shortcuts
-
-To add shortcuts for an application:
-
-1. Create a new markdown file in the `shortcuts/` directory
-2. Name the file `[application_name].md`
-3. Format shortcuts using markdown
-
-Example `vscode.md`:
-```markdown
-# Visual Studio Code Shortcuts
-
-## File Operations
-- `Ctrl+N`: New File
-- `Ctrl+S`: Save
-- `Ctrl+Shift+S`: Save All
-
-## Editing
-- `Ctrl+Z`: Undo
-- `Ctrl+Y`: Redo
+# Launch KeyWiz
+python keywhiz_app.py
 ```
 
-## Customization
+### Building from Source
 
-Edit `keywiz_app.py` to modify:
-- Window size
-- Color scheme
-- Positioning behavior
+```bash
+# Install PyInstaller
+pip install pyinstaller
 
-## License
+# Create executable
+pyinstaller KeyWhiz.spec
+```
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## 📦 Dependencies
 
-## Acknowledgments
+| Package | Purpose |
+|---------|----------|
+| PyQt5 | Modern GUI framework |
+| psutil | Process management |
+| pywin32 | Windows API integration |
+| markdown2 | Shortcut file parsing |
 
-- Inspired by productivity tools and developer workflows
-- Built with  using Python and PyQt5
+## 💡 Usage
 
-## Contact
+### Basic Controls
 
-Your Name - [your.email@example.com](mailto:your.email@example.com)
+- **Toggle Position**: Click and drag to either screen edge
+- **Show/Hide**: Double-click the title bar
+- **Exit**: Right-click → Exit
 
-Project Link: [https://github.com/yourusername/keywiz](https://github.com/yourusername/keywiz)
+### Adding Custom Shortcuts
+
+1. Create a markdown file in `shortcuts/`
+2. Name it after your application (e.g., `chrome.md`)
+3. Format your shortcuts:
+
+```markdown
+# Chrome Shortcuts
+
+## Navigation
+- `Ctrl+T`: New tab
+- `Ctrl+W`: Close tab
+- `Alt+Left`: Back
+```
+
+## 🛠 Development
+
+### Project Structure
+
+```
+keywiz/
+├── 📜 keywhiz_app.py    # Main application
+├── 📂 shortcuts/        # Shortcut definitions
+├── 🎨 icons/           # Application assets
+├── 📋 requirements.txt  # Dependencies
+└── 📄 LICENSE          # MIT license
+```
+
+### Customization Options
+
+```python
+# In keywhiz_app.py
+WINDOW_WIDTH = 300       # Adjust sidebar width
+ACCENT_COLOR = "#4a9eff" # Change theme color
+FONT_FAMILY = "Segoe UI" # Customize typography
+```
+
+## 🤝 Contributing
+
+We love your input! Check out our [Contributing Guide](CONTRIBUTING.md) for ways to get started. Here's how you can help:
+
+1. 🍴 Fork the repository
+2. 🌿 Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. 📤 Push to branch (`git push origin feature/AmazingFeature`)
+5. 📫 Open a Pull Request
+
+## 📫 Support
+
+- 🐛 [Report bugs](https://github.com/cloudwerxlab/keywiz/issues)
+- 💡 [Request features](https://github.com/cloudwerxlab/keywiz/issues)
+- 🤔 [Ask questions](https://github.com/cloudwerxlab/keywiz/discussions)
+- 📧 Email: [cloudwerxlaboratories@gmail.com](mailto:cloudwerxlaboratories@gmail.com)
+- 🌐 Website: [cloudwerxlab.com](https://cloudwerxlab.com)
+
+## 📄 License
+
+KeyWiz is MIT licensed, as found in the [LICENSE](./LICENSE) file.
+
+---
+
+<div align="center">
+
+### Made with ❤️ by CLOUDWERX LAB
+
+If KeyWiz helps your productivity, consider giving it a ⭐️!
+
+</div>
